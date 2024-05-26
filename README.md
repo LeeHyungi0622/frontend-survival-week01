@@ -2,13 +2,13 @@
 
 ## Node
 
-- Deno(데노 -> 디노)를 사용하면 훨씬 간단하게 개발환경을 셋팅할 수 있지만, 대부분 현업에서 Node.js를
- 기반으로 프로젝트를 세팅하기 때문에 상대적으로 구축이 어렵다.
+- Deno(데노 -> 디노)를 사용하면 훨씬 간단하게 개발환경을 셋팅할 수 있지만, 대부분 현업에서 
+  Node.js를 기반으로 프로젝트를 세팅하기 때문에 상대적으로 구축이 어렵다.
 
-- 개발환경은 항상 트렌드가 바뀌기 때문에 `전체적인 흐름을 파악하고, 앞으로 개발환경이 바뀌면 그에 맞춰 
+- 개발환경은 항상 트렌드가 바뀌기 때문에 `전체적인 흐름을 파악하고, 앞으로 개발환경이 바뀌면 그에 맞춰
   유연하게 대응할 수 있는 능력`을 키우는데 집중하자!
 
-- Node는 반드시 최신 버전이 아닌, `LTS 버전`으로 설치하도록 한다. Long Term Support의 약자로, 
+- Node는 반드시 최신 버전이 아닌, `LTS 버전`으로 설치하도록 한다. Long Term Support의 약자로,
   장기간 지원 가능한 버전이라는 의미!
 
 - NVM(Node Version Manager)는 많이 사용해봤는데, [FNM](https://github.com/Schniz/fnm)
@@ -311,7 +311,7 @@ npm script를 설정한다.
 ```zsh
   1:1  error  Definition for rule 'import/no-extraneous-dependencies' was not 
   found  import/no-extraneous-dependencies
-  1:1  error  Definition for rule 'import/extensions' was not found                  
+  1:1  error  Definition for rule 'import/extensions' was not found
   import/extensions
 ```
 
