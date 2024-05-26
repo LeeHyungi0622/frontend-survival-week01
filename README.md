@@ -2,13 +2,17 @@
 
 ## Node
 
-- Deno(데노 -> 디노)를 사용하면 훨씬 간단하게 개발환경을 셋팅할 수 있지만, 대부분 현업에서 Node.js를 기반으로 프로젝트를 세팅하기 때문에 상대적으로 구축이 어렵다.
+- Deno(데노 -> 디노)를 사용하면 훨씬 간단하게 개발환경을 셋팅할 수 있지만, 대부분 현업에서 Node.js를
+ 기반으로 프로젝트를 세팅하기 때문에 상대적으로 구축이 어렵다.
 
-- 개발환경은 항상 트렌드가 바뀌기 때문에 `전체적인 흐름을 파악하고, 앞으로 개발환경이 바뀌면 그에 맞춰 유연하게 대응할 수 있는 능력`을 키우는데 집중하자!
+- 개발환경은 항상 트렌드가 바뀌기 때문에 `전체적인 흐름을 파악하고, 앞으로 개발환경이 바뀌면 그에 맞춰 
+  유연하게 대응할 수 있는 능력`을 키우는데 집중하자!
 
-- Node는 반드시 최신 버전이 아닌, `LTS 버전`으로 설치하도록 한다. Long Term Support의 약자로, 장기간 지원 가능한 버전이라는 의미!
+- Node는 반드시 최신 버전이 아닌, `LTS 버전`으로 설치하도록 한다. Long Term Support의 약자로, 
+  장기간 지원 가능한 버전이라는 의미!
 
-- NVM(Node Version Manager)는 많이 사용해봤는데, [FNM](https://github.com/Schniz/fnm)라는 더 빠른 사용이 가능하다.
+- NVM(Node Version Manager)는 많이 사용해봤는데, [FNM](https://github.com/Schniz/fnm)
+  라는 더 빠른 사용이 가능하다.
 
 ### 개발환경 구축 순서 (STEP 1 ~ STEP 10)
 
@@ -25,9 +29,11 @@ github에 올리지 말아야 할 리스트를 .gitignore 파일에 작성하도
 
 #### <ins><b>(STEP 3)</b> TypeScript 관련 설정하기</ins>
 
-TypeScript는 JavaScript의 Superset으로, 자바스크립트 언어에 정적인 타입을 입혀 개발과정에서 실수를 줄일 수 있다는 장점이 있다.
+TypeScript는 JavaScript의 Superset으로, 자바스크립트 언어에 정적인 타입을 입혀 개발과정에서 
+실수를 줄일 수 있다는 장점이 있다.
 
-- 타입스크립트를 devdependency 항목으로 추가하기 (타입스크립트는 개발을 위한 도구로, dependency가 아닌 devdependency 항목으로 추가)
+- 타입스크립트를 devdependency 항목으로 추가하기 (타입스크립트는 개발을 위한 도구로, dependency가
+  아닌 devdependency 항목으로 추가)
 
     ```zsh
     npm i -D typescript
@@ -53,7 +59,8 @@ TypeScript는 JavaScript의 Superset으로, 자바스크립트 언어에 정적�
   아래 명령을 통해 eslint와 관련된 dependencies를 설치한다.
 
     ```zsh
-    npm i -D eslint@8.57.0 eslint-config-xo@0.44.0 eslint-config-xo-typescript@4.0.0 eslint-plugin-react@7.34.1
+    npm i -D eslint@8.57.0 eslint-config-xo@0.44.0 
+             eslint-config-xo-typescript@4.0.0 eslint-plugin-react@7.34.1
     ```
 
 - `.eslintrc.js` 파일 추가
@@ -61,11 +68,14 @@ TypeScript는 JavaScript의 Superset으로, 자바스크립트 언어에 정적�
     ```zsh
     npx eslint --init
     ```
-    위 명령을 통해 eslint를 초기화해주게 되면, 강의에서 나온 질문들과 다른 부분이 있어, 일단 ㅜ이의 과정에서 ESLint 관련 dependencies를 버전과 일치하게 설치해준다. (이 부분은 나중에 최신 버전에 맞춰서 수정해서 설정하는 방법 따로 정리하도록 하자!)
+    위 명령을 통해 eslint를 초기화해주게 되면, 강의에서 나온 질문들과 다른 부분이 있어, 일단 이 
+    과정에서 ESLint 관련 dependencies를 버전과 일치하게 설치해준다. (이 부분은 나중에 최신 버전에 
+    맞춰서 수정해서 설정하는 방법 따로 정리하도록 하자!)
 
 - `.eslintrc.js` 파일 내용 수정하기
 
-    JSX 문법에서는 lint를 제외해주도록 하고, jest를 사용하는 경우에는 아래와 같이 jest: true를 설정해주도록 한다.
+    JSX 문법에서는 lint를 제외해주도록 하고, jest를 사용하는 경우에는 아래와 같이 jest: true를 
+    설정해주도록 한다.
 
     ```javascript
     module.exports = {
@@ -168,7 +178,8 @@ TypeScript는 JavaScript의 Superset으로, 자바스크립트 언어에 정적�
     ```zsh
     npm i react react-dom
     ```
-- 오래된 라이브러리의 경우, 라이브러리 내부에 타입 선언이 없기 때문에 아래와 같이 타입 파일도 같이 설치해주도록 한다.
+- 오래된 라이브러리의 경우, 라이브러리 내부에 타입 선언이 없기 때문에 아래와 같이 타입 파일도 같이 
+  설치해주도록 한다.
     ```zsh
     npm i -D @types/react @types/react-dom
     ```
@@ -187,7 +198,8 @@ TypeScript는 JavaScript의 Superset으로, 자바스크립트 언어에 정적�
     ```js
     module.exports = {
         testEnvironment: 'jsdom',
-        <!-- 테스트 코드에서 QueryByText 없는 것을 확인할 때 이 부분이 필수로 설정해야 한다.(구체적인 이유에 대해서 찾아서 정리하기) -->
+        <!-- 테스트 코드에서 QueryByText 없는 것을 확인할 때 이 부분이 필수로 설정해야 한다.
+        (구체적인 이유에 대해서 찾아서 정리하기) -->
         setupFilesAfterEnv: [
         '<rootDir>/src/setupTests.ts',
         ],
@@ -221,7 +233,9 @@ TypeScript는 JavaScript의 Superset으로, 자바스크립트 언어에 정적�
 
     - `@testing-library/jest-dom` 6.0.0 버전부터 변경된 내용이 있다.
 
-        최신버전을 사용하는 경우, `jest.config.js` 파일 속 `setupFilesAfterEnv`의 `@testing-library/jest-dom/extend-expect` 설정 대신 `jest-setup.js` 파일에 `import '@testing-library/jest-dom'`를 추가한다.
+        최신버전을 사용하는 경우, `jest.config.js` 파일 속 `setupFilesAfterEnv`의 
+        `@testing-library/jest-dom/extend-expect` 설정 대신 `jest-setup.js` 파일에 
+        `import '@testing-library/jest-dom'`를 추가한다.
 
 #### <ins><b>(STEP 8)</b> Parcel 관련 세팅하기</ins>
 
@@ -267,7 +281,8 @@ TypeScript는 JavaScript의 Superset으로, 자바스크립트 언어에 정적�
 
 #### <ins><b>(STEP 10)</b> package.json 스크립트 명령어 수정하기</ins>
 
-parcel로 서버 실행, 배포, ESLint 체크 및 TypeScript 체크, Jest 테스트 간편 명령어 설정을 위해 npm script를 설정한다.
+parcel로 서버 실행, 배포, ESLint 체크 및 TypeScript 체크, Jest 테스트 간편 명령어 설정을 위해 
+npm script를 설정한다.
 
 ```json
 {
@@ -283,7 +298,9 @@ parcel로 서버 실행, 배포, ESLint 체크 및 TypeScript 체크, Jest 테�
     },
 }
 ```
-기본적으로 parcel 서버 실행 명령어가 `npm parcel index.html`이지만, index.html을 계속 입력해서 작성하기 어렵기 때문에 `"source": "./index.html"`을 `"main": "index.js"` 대신해서 작성하도록 한다.
+기본적으로 parcel 서버 실행 명령어가 `npm parcel index.html`이지만, index.html을 계속 
+입력해서 작성하기 어렵기 때문에 `"source": "./index.html"`을 `"main": "index.js"` 대신해서 
+작성하도록 한다.
 
 
 ### <ins>에러해결</ins>
@@ -292,8 +309,10 @@ parcel로 서버 실행, 배포, ESLint 체크 및 TypeScript 체크, Jest 테�
 `npm run lint` 명령 실행시에 아래와 같은 에러가 발생하는 경우,
 
 ```zsh
-  1:1  error  Definition for rule 'import/no-extraneous-dependencies' was not found  import/no-extraneous-dependencies
-  1:1  error  Definition for rule 'import/extensions' was not found                  import/extensions
+  1:1  error  Definition for rule 'import/no-extraneous-dependencies' was not 
+  found  import/no-extraneous-dependencies
+  1:1  error  Definition for rule 'import/extensions' was not found                  
+  import/extensions
 ```
 
 우선 `npm i -D eslint-plugin-import` 설치를 한 뒤에 `.eslintrc.js`파일을 수정해주도록 한다.
@@ -315,7 +334,8 @@ module.exports = {
 #### <ins>(에러 2)</ins>
 
 ```zsh
-Warning: React version not specified in eslint-plugin-react settings. See https://github.com/jsx-eslint/eslint-plugin-react#configuration .
+Warning: React version not specified in eslint-plugin-react settings. See 
+https://github.com/jsx-eslint/eslint-plugin-react#configuration .
 ```
 
 `.eslintrc.js` 파일의 아래 부분에 다음과 같이 수정한다.
