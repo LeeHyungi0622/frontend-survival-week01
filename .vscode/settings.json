@@ -3,7 +3,8 @@
     80
   ],
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "markdownlint.autoFix": true
   },
   "trailing-spaces.trimOnSave": true
 }

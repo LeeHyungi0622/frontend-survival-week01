@@ -2,7 +2,7 @@
 
 ## Node
 
-- Deno(데노 -> 디노)를 사용하면 훨씬 간단하게 개발환경을 셋팅할 수 있지만, 대부분 현업에서 
+- Deno(데노 -> 디노)를 사용하면 훨씬 간단하게 개발환경을 셋팅할 수 있지만, 대부분 현업에서
   Node.js를 기반으로 프로젝트를 세팅하기 때문에 상대적으로 구축이 어렵다.
 
 - 개발환경은 항상 트렌드가 바뀌기 때문에 `전체적인 흐름을 파악하고, 앞으로 개발환경이 바뀌면 그에 맞춰
@@ -20,7 +20,6 @@
 
 생성한 이후에는 package.json 파일 내 이름, 버전, 설명 등을 나만의 프로젝트에 맞게 설정하도록 한다.
 
-
 #### <ins><b>(STEP 2)</b> `.gitignore` 파일 생성하기</ins>
 
 github에 올리지 말아야 할 리스트를 .gitignore 파일에 작성하도록 한다.
@@ -29,7 +28,7 @@ github에 올리지 말아야 할 리스트를 .gitignore 파일에 작성하도
 
 #### <ins><b>(STEP 3)</b> TypeScript 관련 설정하기</ins>
 
-TypeScript는 JavaScript의 Superset으로, 자바스크립트 언어에 정적인 타입을 입혀 개발과정에서 
+TypeScript는 JavaScript의 Superset으로, 자바스크립트 언어에 정적인 타입을 입혀 개발과정에서
 실수를 줄일 수 있다는 장점이 있다.
 
 - 타입스크립트를 devdependency 항목으로 추가하기 (타입스크립트는 개발을 위한 도구로, dependency가
@@ -68,13 +67,14 @@ TypeScript는 JavaScript의 Superset으로, 자바스크립트 언어에 정적�
     ```zsh
     npx eslint --init
     ```
-    위 명령을 통해 eslint를 초기화해주게 되면, 강의에서 나온 질문들과 다른 부분이 있어, 일단 이 
-    과정에서 ESLint 관련 dependencies를 버전과 일치하게 설치해준다. (이 부분은 나중에 최신 버전에 
+
+    위 명령을 통해 eslint를 초기화해주게 되면, 강의에서 나온 질문들과 다른 부분이 있어, 일단 이
+    과정에서 ESLint 관련 dependencies를 버전과 일치하게 설치해준다. (이 부분은 나중에 최신 버전에
     맞춰서 수정해서 설정하는 방법 따로 정리하도록 하자!)
 
 - `.eslintrc.js` 파일 내용 수정하기
 
-    JSX 문법에서는 lint를 제외해주도록 하고, jest를 사용하는 경우에는 아래와 같이 jest: true를 
+    JSX 문법에서는 lint를 제외해주도록 하고, jest를 사용하는 경우에는 아래와 같이 jest: true를
     설정해주도록 한다.
 
     ```javascript
@@ -178,8 +178,10 @@ TypeScript는 JavaScript의 Superset으로, 자바스크립트 언어에 정적�
     ```zsh
     npm i react react-dom
     ```
-- 오래된 라이브러리의 경우, 라이브러리 내부에 타입 선언이 없기 때문에 아래와 같이 타입 파일도 같이 
+
+- 오래된 라이브러리의 경우, 라이브러리 내부에 타입 선언이 없기 때문에 아래와 같이 타입 파일도 같이
   설치해주도록 한다.
+
     ```zsh
     npm i -D @types/react @types/react-dom
     ```
@@ -187,6 +189,7 @@ TypeScript는 JavaScript의 Superset으로, 자바스크립트 언어에 정적�
 #### <ins><b>(STEP 7)</b> Jest 관련 설치하기</ins>
 
 - 프론트엔드 테스팅을 위한 라이브러리인 `Jest`를 설치한다.
+
     ```zsh
     npm i -D jest @types/jest @swc/core @swc/jest \
     jest-environment-jsdom \
@@ -225,16 +228,18 @@ TypeScript는 JavaScript의 Superset으로, 자바스크립트 언어에 정적�
         ],
     };
     ```
-    - `src/setupTests.ts` 경로에 파일을 생성하고 생성한 파일에 아래 내용을 추가한다.
+
+  - `src/setupTests.ts` 경로에 파일을 생성하고 생성한 파일에 아래 내용을 추가한다.
+
         ```typescript
         /* eslint-disable import/no-unresolved */
         import '@testing-library/jest-dom';
         ```
 
-    - `@testing-library/jest-dom` 6.0.0 버전부터 변경된 내용이 있다.
+  - `@testing-library/jest-dom` 6.0.0 버전부터 변경된 내용이 있다.
 
-        최신버전을 사용하는 경우, `jest.config.js` 파일 속 `setupFilesAfterEnv`의 
-        `@testing-library/jest-dom/extend-expect` 설정 대신 `jest-setup.js` 파일에 
+        최신버전을 사용하는 경우, `jest.config.js` 파일 속 `setupFilesAfterEnv`의
+        `@testing-library/jest-dom/extend-expect` 설정 대신 `jest-setup.js` 파일에
         `import '@testing-library/jest-dom'`를 추가한다.
 
 #### <ins><b>(STEP 8)</b> Parcel 관련 세팅하기</ins>
@@ -242,6 +247,7 @@ TypeScript는 JavaScript의 Superset으로, 자바스크립트 언어에 정적�
 웹 애플리케이션 번들러인 Parcel를 설치해서 자바스크립트 파일들을 하나로 합쳐준다.
 
 - Parcel 설치
+
     ```zsh
     npm i -D parcel
     ```
@@ -255,6 +261,7 @@ TypeScript는 JavaScript의 Superset으로, 자바스크립트 언어에 정적�
     ```
 
 - `.parcelrc` 파일 설정을 추가하여 static 폴더를 정적 파일 루트로 설정한다.
+
     ```json
     {
         "extends": ["@parcel/config-default"],
@@ -265,23 +272,26 @@ TypeScript는 JavaScript의 Superset으로, 자바스크립트 언어에 정적�
 #### <ins><b>(STEP 9)</b> 배포하기</ins>
 
 - 아래 명령어로 dist 폴더 아래에 배포할 정적 파일들을 생성한다.
+
     ```zsh
     npx run build
     ```
 
 - dist 폴더 생성되면, dist 폴더로 이동하여 서버로 띄우기
+
     ```zsh
     npx servor
     ```
 
 - dist 폴더 외부에서 서버로 띄우기 위해서는 아래 명령어를 실행한다.
+
     ```zsh
     npx servor dist
     ```
 
 #### <ins><b>(STEP 10)</b> package.json 스크립트 명령어 수정하기</ins>
 
-parcel로 서버 실행, 배포, ESLint 체크 및 TypeScript 체크, Jest 테스트 간편 명령어 설정을 위해 
+parcel로 서버 실행, 배포, ESLint 체크 및 TypeScript 체크, Jest 테스트 간편 명령어 설정을 위해
 npm script를 설정한다.
 
 ```json
@@ -298,14 +308,15 @@ npm script를 설정한다.
     },
 }
 ```
-기본적으로 parcel 서버 실행 명령어가 `npm parcel index.html`이지만, index.html을 계속 
-입력해서 작성하기 어렵기 때문에 `"source": "./index.html"`을 `"main": "index.js"` 대신해서 
-작성하도록 한다.
 
+기본적으로 parcel 서버 실행 명령어가 `npm parcel index.html`이지만, index.html을 계속
+입력해서 작성하기 어렵기 때문에 `"source": "./index.html"`을 `"main": "index.js"` 대신해서
+작성하도록 한다.
 
 ### <ins>에러해결</ins>
 
 #### <ins>(에러 1)</ins>
+
 `npm run lint` 명령 실행시에 아래와 같은 에러가 발생하는 경우,
 
 ```zsh
